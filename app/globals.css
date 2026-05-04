@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface: rgba(255, 255, 255, 0.7);
+  --border: rgba(15, 23, 42, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Deep space aesthetic with a hint of purple/blue */
+    --background: #09090b;
+    --foreground: #f8fafc;
+    --surface: rgba(24, 24, 27, 0.6);
+    --border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  /* Animated Mesh Gradient Background */
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+  background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,97%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,70%,0.2) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,70%,0.2) 0, transparent 50%);
+  }
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.3);
+}
+
+/* Glass panel utility */
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
