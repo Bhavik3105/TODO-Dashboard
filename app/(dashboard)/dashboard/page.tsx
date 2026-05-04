@@ -80,7 +80,7 @@ export default function DashboardPage() {
         ) : (
           <div className="grid gap-6 sm:grid-cols-2">
             {tasks.map((task, i) => (
-              <div key={task._id} style={{ animationDelay: `${i * 100}ms` }} className="animate-fade-in-up" style={{animationFillMode: 'both'}}>
+              <div key={task._id} style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }} className="animate-fade-in-up">
                 <TaskCard task={task} onUpdate={fetchTasks} />
               </div>
             ))}
